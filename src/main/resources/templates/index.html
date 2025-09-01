@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Welcome – IronGuard Kennels</title>
+    <!-- Link to your unified site-wide CSS -->
+    <link rel="stylesheet" th:href="@{/css/site.css}">
+    <style>
+        /* Page-specific styles (can be moved to site.css if you prefer) */
+        .hero {
+            text-align: center;
+            padding: 40px 20px;
+        }
+
+        .logo-img {
+            display: block;
+            margin: 0 auto 20px auto;
+            max-width: 200px; /* controls logo size */
+            height: auto;
+        }
+
+        h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+        }
+
+        p {
+            font-size: 22px;
+        }
+
+        /* Instagram icon small + circular */
+        .ig-circle {
+            display: inline-block;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            overflow: hidden;
+            background-color: #E1306C;
+            transition: transform 0.2s ease;
+            vertical-align: middle;
+        }
+
+        .ig-circle img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .ig-circle:hover {
+            transform: scale(1.1);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 40px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar Fragment -->
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <div class="hero">
+        <!-- Centered, scaled logo -->
+        <img src="/images/Logo1.png" alt="Iron Guard Kennels Logo" class="logo-img">
+
+        <h1>Welcome to IronGuard Kennels</h1>
+        <p>Breeding Presa Canarios with strength, soul, and heritage.</p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://www.instagram.com/ironguard_kennels/" target="_blank" class="ig-circle">
+            <img src="/images/Instagram Logo.png" alt="Instagram" />
+        </a>
+    </footer>
+</div>
+
+</body>
+</html>

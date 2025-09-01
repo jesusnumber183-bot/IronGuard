@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Upcoming Litters – IronGuard Kennels</title>
+    <!-- Link to your unified site-wide CSS -->
+    <link rel="stylesheet" th:href="@{/css/site.css}">
+    <style>
+        /* Page-specific styles (can be moved to site.css if you prefer) */
+        h1 {
+            font-size: 36px;
+            margin-bottom: 30px;
+            color: #2b2b2b;
+        }
+
+        .litter-entry {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #ccc;
+            padding-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Sidebar Fragment -->
+<div th:replace="~{fragments/sidebar :: sidebar}"></div>
+
+<!-- Main Content -->
+<div class="main-content">
+    <h1>Upcoming Litters</h1>
+
+    <div th:each="litter : ${litters}" class="litter-entry">
+        <h2 th:text="${litter.expectedDate}">Expected Date</h2>
+        <p th:text="'Sire: ' + ${litter.sire} + ', Dam: ' + ${litter.dam}"></p>
+        <p th:text="${litter.notes}"></p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <a href="https://www.instagram.com/ironguard_kennels/" target="_blank" class="ig-circle">
+            <img src="/images/Instagram Logo.png" alt="Instagram" />
+        </a>
+    </footer>
+</div>
+
+</body>
+</html>

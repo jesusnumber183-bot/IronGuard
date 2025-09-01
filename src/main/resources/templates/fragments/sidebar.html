@@ -1,0 +1,8 @@
+<div th:fragment="sidebar">
+    <div class="sidebar">
+        <a th:href="@{/}" th:classappend="${activeTab == 'home'} ? 'active'">Home</a>
+        <a th:href="@{/about}" th:classappend="${activeTab == 'about'} ? 'active'">About Us</a>
+        <a th:href="@{/dogs}" th:classappend="${activeTab == 'dogs'} ? 'active'">Our Dogs</a>
+        <a th:href="@{/litters}" th:classappend="${activeTab == 'litters'} ? 'active'">Upcoming Litters</a>
+    </div>
+</div>
